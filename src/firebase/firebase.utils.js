@@ -1,0 +1,44 @@
+import firebase, { initializeApp } from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+
+const config = {
+    apiKey: "AIzaSyB4bUz6CNR9PYXRVARd1Im9GVp8QoizSAA",
+    authDomain: "ecommer-56802.firebaseapp.com",
+    databaseURL: "https://ecommer-56802.firebaseio.com",
+    projectId: "ecommer-56802",
+    storageBucket: "ecommer-56802.appspot.com",
+    messagingSenderId: "533890940318",
+    appId: "1:533890940318:web:91c3b4473ab9e0f4deea8f",
+    measurementId: "G-TPKLF135PC"
+};
+
+firebase.initializeApp(config);
+
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
+
+export default firebase;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
